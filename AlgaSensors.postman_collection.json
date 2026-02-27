@@ -1,0 +1,514 @@
+{
+  "info": {
+    "_postman_id": "bbf1d522-2499-40d5-bfc5-9fdace009b5a",
+    "name": "AlgaSensors",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "21194125"
+  },
+  "item": [
+    {
+      "name": "Device Management",
+      "item": [
+        {
+          "name": "Create Device",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"Sensor {{$randomAlphaNumeric}}-{{$randomColor}}\",\r\n    \"ip\": \"{{$randomIP}}\",\r\n    \"location\": \"{{$randomStreetName}} {{$randomInt}}\",\r\n    \"protocol\": \"{{$randomProtocol}}\",\r\n    \"model\": \"{{$randomAlphaNumeric}}-{{$randomInt}}\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/sensors",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "sensors"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Sensor",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"Sensor {{$randomAlphaNumeric}}-{{$randomColor}}\",\r\n    \"ip\": \"{{$randomIP}}\",\r\n    \"location\": \"{{$randomStreetName}} {{$randomInt}}\",\r\n    \"protocol\": \"HTTP\",\r\n    \"model\": \"{{$randomAlphaNumeric}}{{$randomInt}}-HTTP\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/sensors/:sensorId",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "sensors",
+                ":sensorId"
+              ],
+              "variable": [
+                {
+                  "id": 0,
+                  "key": "sensorId",
+                  "value": "0PJHNNH9GFWQW"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Enable Sensor",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/sensors/:sensorId/enable",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "sensors",
+                ":sensorId",
+                "enable"
+              ],
+              "variable": [
+                {
+                  "id": 0,
+                  "key": "sensorId",
+                  "value": "0PJHT1NSRJRPP"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Disable Sensor",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/sensors/:sensorId/enable",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "sensors",
+                ":sensorId",
+                "enable"
+              ],
+              "variable": [
+                {
+                  "key": "sensorId",
+                  "value": "0K6ZYEYMTZ8QT"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Sensor",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/sensors/:sensorId",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "sensors",
+                ":sensorId"
+              ],
+              "variable": [
+                {
+                  "key": "sensorId",
+                  "value": "0K703XT07Y0RX"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Find Sensor by Id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/sensors/:sensorId",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "sensors",
+                ":sensorId"
+              ],
+              "variable": [
+                {
+                  "key": "sensorId",
+                  "value": "0K79PF0XACMPX"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Find Sensor by Id With Detail",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/sensors/:sensorId/detail",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "sensors",
+                ":sensorId",
+                "detail"
+              ],
+              "variable": [
+                {
+                  "id": 0,
+                  "key": "sensorId",
+                  "value": "0PJHT1NSRJRPP",
+                  "type": "string"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Search Sensors",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/sensors?page=0&size=5&sort=id,desc",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "sensors"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "0"
+                },
+                {
+                  "key": "size",
+                  "value": "5"
+                },
+                {
+                  "key": "sort",
+                  "value": "id,desc"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Temperature Processing",
+      "item": [
+        {
+          "name": "Receive Sensor data",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{{$randomInt}}",
+              "options": {
+                "raw": {
+                  "language": "text"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8081/api/sensors/:sensorId/temperatures/data",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8081",
+              "path": [
+                "api",
+                "sensors",
+                ":sensorId",
+                "temperatures",
+                "data"
+              ],
+              "variable": [
+                {
+                  "id": 0,
+                  "key": "sensorId",
+                  "value": "0PJHT1NSRJRPP"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Temperature Monitoring",
+      "item": [
+        {
+          "name": "Find Sensor Monitoring Config by Id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8082/api/sensors/:sensorId/monitoring",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8082",
+              "path": [
+                "api",
+                "sensors",
+                ":sensorId",
+                "monitoring"
+              ],
+              "variable": [
+                {
+                  "key": "sensorId",
+                  "value": "0K6ZYEYMTZ8QT"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Find Sensor Temperatures",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8082/api/sensors/:sensorId/temperatures",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8082",
+              "path": [
+                "api",
+                "sensors",
+                ":sensorId",
+                "temperatures"
+              ],
+              "variable": [
+                {
+                  "key": "sensorId",
+                  "value": "0K6ZYEYMTZ8QT"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Enable Sensor Monitoring Config",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8082/api/sensors/:sensorId/monitoring/enable",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8082",
+              "path": [
+                "api",
+                "sensors",
+                ":sensorId",
+                "monitoring",
+                "enable"
+              ],
+              "variable": [
+                {
+                  "key": "sensorId",
+                  "value": "0K6ZYEYMTZ8QT"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Disable Sensor Monitoring Config",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8082/api/sensors/:sensorId/monitoring/enable",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8082",
+              "path": [
+                "api",
+                "sensors",
+                ":sensorId",
+                "monitoring",
+                "enable"
+              ],
+              "variable": [
+                {
+                  "key": "sensorId",
+                  "value": "0K6ZYEYMTZ8QT"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Find Sensor Alert Config",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8082/api/sensors/:sensorId/alert",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8082",
+              "path": [
+                "api",
+                "sensors",
+                ":sensorId",
+                "alert"
+              ],
+              "variable": [
+                {
+                  "id": 0,
+                  "key": "sensorId",
+                  "value": "0K6ZYEYMTZ8QT"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Change Sensor Alert Config",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"maxTemperature\": 100,\r\n    \"minTemperature\": 1\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8082/api/sensors/:sensorId/alert",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8082",
+              "path": [
+                "api",
+                "sensors",
+                ":sensorId",
+                "alert"
+              ],
+              "variable": [
+                {
+                  "id": 0,
+                  "key": "sensorId",
+                  "value": "0PJHT1NSRJRPP"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Remove Sensor Alert Config",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8082/api/sensors/:sensorId/alert",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8082",
+              "path": [
+                "api",
+                "sensors",
+                ":sensorId",
+                "alert"
+              ],
+              "variable": [
+                {
+                  "key": "sensorId",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
