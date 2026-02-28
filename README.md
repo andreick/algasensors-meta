@@ -4,9 +4,9 @@ AlgaSensors is a study project for exploring microservices patterns with Spring 
 
 ## Services
 
-- device-management: manages device registrations and metadata.
-- temperature-monitoring: collects temperature readings from devices.
-- temperature-processing: processes temperature events and derived signals.
+- [device-management](https://github.com/andreick/algasensors-device-management): manages device registrations and metadata.
+- [temperature-monitoring](https://github.com/andreick/algasensors-temperature-monitoring): collects temperature readings from devices.
+- [temperature-processing](https://github.com/andreick/algasensors-temperature-processing): processes temperature events and derived signals.
 
 ## Requirements
 
